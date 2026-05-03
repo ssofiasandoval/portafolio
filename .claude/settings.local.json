@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftotext /Users/mac/Desktop/cv-portafolio/actuales/portafolio-sofiasandoval.pdf -)",
+      "Read(//usr/local/bin/**)",
+      "Bash(python3 -c \"import pdfminer\")",
+      "Bash(mdls /Users/mac/Desktop/cv-portafolio/actuales/portafolio-sofiasandoval.pdf)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(python3 -c ' *)",
+      "Bash(pip3 install *)",
+      "WebFetch(domain:ssofiasandoval.github.io)",
+      "Read(//private/tmp/claude-501/**)",
+      "Read(//private/var/folders/**)",
+      "Read(//Users/mac/Downloads/**)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

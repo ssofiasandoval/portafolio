@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sofía Sandoval — UX Designer</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"><span class="cursor-text">Ver →</span></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="logo">
+    <img src="logo.png" alt="Sofía Sandoval">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#proyectos" onclick="toggleMenu()">Proyectos</a>
+  <a href="#sobre" onclick="toggleMenu()">Sobre mí</a>
+  <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+</div>
+
+<!-- HERO -->
+<!-- IMAGEN DE FONDO: agrega hero-bg.jpg a tu carpeta -->
+<!-- style.css ya tiene: background-image: url('hero-bg.jpg') en #inicio -->
+<section id="inicio">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+
+  <div class="hero-left fade-up">
+    <div class="hero-tag">UX / UI Designer</div>
+    <h1>Diseño que<br><em>conecta</em></h1>
+    <div class="hero-name">Sofía Sandoval</div>
+    <p class="hero-desc">
+      Diseñadora industrial especializada en UX. Creo experiencias centradas en las personas — desde la investigación hasta el prototipo final.
+    </p>
+    <div class="hero-btns">
+      <a href="#proyectos" class="btn-coral">Ver proyectos →</a>
+      <a href="#contacto" class="btn-outline">¿Colaboramos?</a>
+    </div>
+  </div>
+
+  <div class="hero-right fade-up" style="transition-delay:0.2s">
+    <div style="position:relative; display:inline-block;">
+      <!-- <div class="skills-float">
+        <div class="skills-dot"></div>
+        Disponible para proyectos
+      </div> -->
+      <!-- FOTO DE PERFIL: reemplaza perfil.jpg con tu archivo -->
+      <div class="hero-img-wrap">
+        <img src="fondo.jpg" alt="Sofía Sandoval">
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="section-label">Trabajo</div>
+  <h2>Proyectos <em>destacados</em></h2>
+  <p class="section-intro">Experiencias diseñadas con metodología centrada en el usuario, desde investigación hasta prototipo de alta fidelidad.</p>
+
+  <div class="filtros-proyectos">
+    <button class="filtro-pill activo" data-filtro="todos">Todos</button>
+    <button class="filtro-pill" data-filtro="ux">UX/UI</button>
+    <button class="filtro-pill" data-filtro="app">App</button>
+    <button class="filtro-pill" data-filtro="web">Web</button>
+    <button class="filtro-pill" data-filtro="investigacion">Investigación</button>
+    <button class="filtro-pill" data-filtro="industrial">Industrial</button>
+  </div>
+
+  <div class="proyectos-grid">
+
+    <!-- PROYECTO 0: HILACHA (FREELANCE — EN PROCESO) -->
+    <div class="proyecto-card fade-up" data-categorias="ux web app" onclick="openModal('hilacha')">
+      <div class="proyecto-img" style="background:#000;">
+        <img src="hilacha.png" alt="Hilacha" style="object-fit:contain; padding:40px;">
+        <div class="proyecto-tipo en-proceso">En proceso</div>
+      </div>
+      <div class="proyecto-body">
+        <div class="proyecto-tags">
+          <span class="tag">UX/UI</span>
+          <span class="tag">Web</span>
+          <span class="tag">App</span>
+          <span class="tag">Freelance</span>
+        </div>
+        <h3>Hilacha</h3>
+        <p>Marca de moda que descose el relato detrás de cada prenda. Diseño y desarrollo web + app complementaria.</p>
+        <div class="proyecto-footer">
+          <span class="proyecto-duracion">2026 · Freelance</span>
+          <div class="proyecto-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROYECTO 1: MEMORIAS VIVAS -->
+    <div class="proyecto-card fade-up" data-categorias="ux app investigacion" onclick="openModal('memorias')">
+      <div class="proyecto-img">
+        <!-- IMAGEN: agrega proyecto-memorias.jpg a tu carpeta -->
+        <img src="memoriasvivas.png" alt="Memorias Vivas">
+        <div class="proyecto-tipo">Proyecto de Título</div>
+      </div>
+      <div class="proyecto-body">
+        <div class="proyecto-tags">
+          <span class="tag">UX/UI</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Phygital</span>
+        </div>
+        <h3>Memorias Vivas</h3>
+        <p>Plataforma que resignifica el duelo a través de ritos simbólicos y objetos de conmemoración.</p>
+        <div class="proyecto-footer">
+          <span class="proyecto-duracion">10 meses</span>
+          <div class="proyecto-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROYECTO 2: MIM VECINOS -->
+    <div class="proyecto-card fade-up" style="transition-delay:0.1s" data-categorias="ux app" onclick="openModal('mim')">
+      <div class="proyecto-img">
+        <!-- IMAGEN: agrega proyecto-mim.jpg a tu carpeta -->
+        <img src="mimvecinos.png" alt="MIM Vecinos">
+        <div class="proyecto-tipo">Práctica Profesional</div>
+      </div>
+      <div class="proyecto-body">
+        <div class="proyecto-tags">
+          <span class="tag">UX/UI</span>
+          <span class="tag">App</span>
+          <span class="tag">Comunidad</span>
+        </div>
+        <h3>MIM Vecinos</h3>
+        <p>App para fortalecer la vinculación de los residentes de La Granja con el Museo Interactivo Mirador.</p>
+        <div class="proyecto-footer">
+          <span class="proyecto-duracion">5 meses</span>
+          <div class="proyecto-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROYECTO 3: BIOMATERIA -->
+    <div class="proyecto-card fade-up" style="transition-delay:0.2s" data-categorias="web investigacion" onclick="openModal('biomateria')">
+      <div class="proyecto-img">
+        <!-- IMAGEN: agrega proyecto-biomateria.jpg a tu carpeta -->
+        <img src="biomateria.png" alt="BioMateria">
+        <div class="proyecto-tipo">Investigación</div>
+      </div>
+      <div class="proyecto-body">
+        <div class="proyecto-tags">
+          <span class="tag">Front-end</span>
+          <span class="tag">IA</span>
+          <span class="tag">GUI Desktop</span>
+        </div>
+        <h3>BioMateria</h3>
+        <p>Software para diseñadores que integra IA mediante protocolo OSC para crear biomateriales.</p>
+        <div class="proyecto-footer">
+          <span class="proyecto-duracion">5 meses</span>
+          <div class="proyecto-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROYECTO 4: PULLMAN -->
+    <div class="proyecto-card fade-up" data-categorias="ux app" onclick="openModal('pullman')">
+      <div class="proyecto-img">
+        <!-- IMAGEN: agrega proyecto-pullman.jpg a tu carpeta -->
+        <img src="pullmandelsur.png" alt="Pullman del Sur">
+        <div class="proyecto-tipo">Proyecto Académico</div>
+      </div>
+      <div class="proyecto-body">
+        <div class="proyecto-tags">
+          <span class="tag">UX/UI</span>
+          <span class="tag">Mobile</span>
+          <span class="tag">E-commerce</span>
+        </div>
+        <h3>Pullman del Sur</h3>
+        <p>Rediseño de la app de compra de pasajes con foco en la experiencia de usuarios frecuentes.</p>
+        <div class="proyecto-footer">
+          <span class="proyecto-duracion">5 meses</span>
+          <div class="proyecto-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROYECTO 5: RECIOIL -->
+    <div class="proyecto-card fade-up" style="transition-delay:0.1s" data-categorias="ux app" onclick="openModal('recioil')">
+      <div class="proyecto-img">
+        <!-- IMAGEN: agrega proyecto-recioil.jpg a tu carpeta -->
+        <img src="recioil.png" alt="ReciOil">
+        <div class="proyecto-tipo">Proyecto Académico</div>
+      </div>
+      <div class="proyecto-body">
+        <div class="proyecto-tags">
+          <span class="tag">UX/UI</span>
+          <span class="tag">Sustentabilidad</span>
+          <span class="tag">App</span>
+        </div>
+        <h3>ReciOil</h3>
+        <p>App que incentiva el reciclaje de aceite de cocina mediante recompensas y recogida a domicilio.</p>
+        <div class="proyecto-footer">
+          <span class="proyecto-duracion">3 meses</span>
+          <div class="proyecto-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROYECTO 6: ETERNAL LAMP -->
+    <div class="proyecto-card fade-up" style="transition-delay:0.2s" data-categorias="industrial investigacion" onclick="openModal('lamp')">
+      <div class="proyecto-img">
+        <!-- IMAGEN: agrega proyecto-lamp.jpg a tu carpeta -->
+        <img src="eternal lamp.png" alt="Eternal Lamp">
+        <div class="proyecto-tipo">Proyecto Académico</div>
+      </div>
+      <div class="proyecto-body">
+        <div class="proyecto-tags">
+          <span class="tag">Diseño Industrial</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">Prototipo</span>
+        </div>
+        <h3>Eternal Lamp</h3>
+        <p>Lámpara interactiva con Arduino que activa audios de seres queridos al detectar presencia.</p>
+        <div class="proyecto-footer">
+          <span class="proyecto-duracion">4 meses</span>
+          <div class="proyecto-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODALES -->
+<div class="modal-overlay" id="modal-hilacha" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('hilacha')">✕</button>
+    <div class="proyecto-tags" style="margin-bottom:16px">
+      <span class="tag">UX/UI</span><span class="tag">Web</span><span class="tag">App</span><span class="tag">Freelance</span>
+    </div>
+    <h3>Hilacha</h3>
+    <p class="modal-subtitle">Proyecto Freelance · Marca de moda · En proceso</p>
+    <p class="modal-desc">Marca de moda que invita a descoser el relato detrás de cada prenda. Diseño y desarrollo del sitio web (HTML, CSS, JS) y diseño de una app complementaria que extiende la experiencia de marca.</p>
+    <a href="https://ssofiasandoval.github.io/hilacha_v3/" target="_blank" rel="noopener" class="btn-modal-link">Ver sitio en vivo →</a>
+    <p class="modal-section-title">Proceso UX</p>
+    <div class="proceso-ux">
+      <div class="proceso-fase">
+        <span class="fase-num">01</span>
+        <h5>Briefing</h5>
+        <p>Reunión con cliente para definir el concepto de marca: "¿Descosemos el relato?". Alineación de identidad, tono y propósito narrativo de Hilacha.</p>
+        <div class="fase-tags"><span class="fase-tag">Cliente</span><span class="fase-tag">Brand</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">02</span>
+        <h5>Investigación</h5>
+        <p>Referentes de moda contemporánea, análisis de marcas con narrativa crítica y benchmarking de e-commerce minimalistas para temporada SS25.</p>
+        <div class="fase-tags"><span class="fase-tag">Benchmark</span><span class="fase-tag">Moodboard</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">03</span>
+        <h5>Conceptualizar</h5>
+        <p>Definición de la arquitectura del sitio: Sobre, Archivos, Alternativas, Inspiración y Contacto. Estética minimalista con tonos neutros.</p>
+        <div class="fase-tags"><span class="fase-tag">IA</span><span class="fase-tag">Sitemap</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">04</span>
+        <h5>Diseño UI</h5>
+        <p>Diseño de pantallas web y de la app en Figma. Sistema visual minimalista que pone la prenda y la narrativa en el centro.</p>
+        <div class="fase-tags"><span class="fase-tag">Figma</span><span class="fase-tag">UI</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">05</span>
+        <h5>Desarrollo Web</h5>
+        <p>Programación del sitio en HTML, CSS y JavaScript. Despliegue en GitHub Pages con foco en performance y experiencia limpia.</p>
+        <div class="fase-tags"><span class="fase-tag">HTML</span><span class="fase-tag">CSS</span><span class="fase-tag">JS</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">06</span>
+        <h5>App (en curso)</h5>
+        <p>Diseño de la app móvil que complementa la experiencia web, extendiendo el catálogo y la narrativa de marca a un formato íntimo.</p>
+        <div class="fase-tags"><span class="fase-tag">Mobile</span><span class="fase-tag">En curso</span></div>
+      </div>
+    </div>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><strong>Rol</strong>UX/UI + Front-end</div>
+      <div class="modal-meta-item"><strong>Estado</strong>En proceso</div>
+      <div class="modal-meta-item"><strong>Tipo</strong>Freelance</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-memorias" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('memorias')">✕</button>
+    <div class="proyecto-tags" style="margin-bottom:16px">
+      <span class="tag">UX/UI</span><span class="tag">Figma</span><span class="tag">Phygital</span>
+    </div>
+    <h3>Memorias Vivas</h3>
+    <p class="modal-subtitle">Proyecto de Título · Universidad Diego Portales</p>
+    <p class="modal-desc">Plataforma que resignifica el duelo a través de ritos simbólicos, integrando objetos físicos (Eternal Lamp, Recordis Joya, Aura Frame) con una app digital.</p>
+    <div class="modal-carousel" id="carousel-memorias">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="memoriasvivas.png" alt="Memorias Vivas"></div>
+        <div class="carousel-slide"><img src="memoriasvivas1.png" alt="Memorias Vivas"></div>
+        <div class="carousel-slide"><img src="memoriasvivas1-1.png" alt="Memorias Vivas"></div>
+
+        <div class="carousel-slide"><img src="memoriasvivas1-3.png" alt="Memorias Vivas"></div>
+        <div class="carousel-slide"><img src="memoriasvivas1-4.png" alt="Memorias Vivas"></div>
+      </div>
+      <button class="carousel-btn carousel-prev" onclick="carouselMove('memorias',-1)">&#8249;</button>
+      <button class="carousel-btn carousel-next" onclick="carouselMove('memorias',1)">&#8250;</button>
+      <div class="carousel-dots" id="dots-memorias"></div>
+    </div>
+    <div class="modal-proyecto-link">
+      <a href="https://www.figma.com/proto/AIGUAdbTKwsg6zIjAvjsZ6/memorias-vivas?node-id=411-492&p=f&viewport=383%2C574%2C0.02&t=OVXpm7nGPYuKnsBA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=313%3A1180&page-id=290%3A1520" target="_blank" rel="noopener" class="btn-modal-link">Ver proyecto en Figma →</a>
+      <div class="modal-qr-wrap">
+        <img src="memoriasvivasQR.png" alt="QR Memorias Vivas">
+        <span>Escanear</span>
+      </div>
+    </div>
+    <p class="modal-section-title">Proceso UX</p>
+    <div class="proceso-ux">
+      <div class="proceso-fase">
+        <span class="fase-num">01</span>
+        <h5>Problema</h5>
+        <p>El duelo es una experiencia universal pero profundamente solitaria. Los rituales tradicionales no siempre contienen emocionalmente.</p>
+        <div class="fase-tags"><span class="fase-tag">Comprensión</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">02</span>
+        <h5>Investigación</h5>
+        <p>Escucha activa mediante entrevistas en profundidad, mapas de empatía y análisis emocional para comprender las distintas fases del duelo.</p>
+        <div class="fase-tags"><span class="fase-tag">Entrevistas</span><span class="fase-tag">Mapas de empatía</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">03</span>
+        <h5>Hallazgos</h5>
+        <p>El recuerdo necesita acción. La memoria se activa a través de lo sensorial. El vínculo no desaparece, se transforma.</p>
+        <div class="fase-tags"><span class="fase-tag">Insights</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">04</span>
+        <h5>Idear</h5>
+        <p>Conceptualización de ritos simbólicos y objetos significativos (Eternal Lamp, Recordis Joya, Aura Frame) que activan la memoria.</p>
+        <div class="fase-tags"><span class="fase-tag">Concepto</span><span class="fase-tag">Ritual</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">05</span>
+        <h5>Prototipar</h5>
+        <p>Arquitectura de información, diseño de experiencia y prototipado en Figma de la app que conecta los objetos con el entorno digital.</p>
+        <div class="fase-tags"><span class="fase-tag">Figma</span><span class="fase-tag">AI</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">06</span>
+        <h5>Resignificación</h5>
+        <p>Propuesta phygital donde la experiencia ritual actúa como mediador emocional entre lo físico y lo digital.</p>
+        <div class="fase-tags"><span class="fase-tag">Phygital</span></div>
+      </div>
+    </div>
+    <p class="modal-section-title">Actividades realizadas</p>
+    <ul class="modal-list">
+      <li>Investigación cualitativa con entrevistas en profundidad</li>
+      <li>Construcción de mapas de empatía</li>
+      <li>Definición de insights emocionales</li>
+      <li>Diseño de experiencia centrada en el usuario</li>
+      <li>Arquitectura de información</li>
+      <li>Prototipado de alta fidelidad en Figma</li>
+      <li>Desarrollo conceptual de propuesta phygital</li>
+    </ul>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><strong>Rol</strong>UX/UI Designer</div>
+      <div class="modal-meta-item"><strong>Duración</strong>10 meses</div>
+      <div class="modal-meta-item"><strong>Tipo</strong>Tesis de Título</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-mim" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('mim')">✕</button>
+    <div class="proyecto-tags" style="margin-bottom:16px">
+      <span class="tag">UX/UI</span><span class="tag">App</span><span class="tag">Comunidad</span>
+    </div>
+    <h3>MIM Vecinos</h3>
+    <p class="modal-subtitle">Práctica Profesional · Museo Interactivo Mirador</p>
+    <p class="modal-desc">App para fortalecer la vinculación del MIM con los residentes de La Granja. Gestión de entradas, biblioteca, mapa y banco de tiempo.</p>
+    <div class="modal-carousel" id="carousel-mim">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="mimvecinos.png" alt="MIM Vecinos pantallas"></div>
+        <div class="carousel-slide"><img src="MIMFLUJO4.png" alt="MIM Vecinos flujo general"></div>
+        <div class="carousel-slide"><img src="MIMFLUJO5.png" alt="MIM Vecinos arquitectura Home"></div>
+        <div class="carousel-slide"><img src="MIMFLUJO6.png" alt="MIM Vecinos arquitectura Entradas"></div>
+        <div class="carousel-slide"><img src="MIMFLUJO7.png" alt="MIM Vecinos arquitectura Mediateca"></div>
+      </div>
+      <button class="carousel-btn carousel-prev" onclick="carouselMove('mim',-1)">&#8249;</button>
+      <button class="carousel-btn carousel-next" onclick="carouselMove('mim',1)">&#8250;</button>
+      <div class="carousel-dots" id="dots-mim"></div>
+    </div>
+    <div class="modal-proyecto-link">
+      <a href="https://www.figma.com/proto/N9eSx0M4hY0dQ0BDPvnSvn/app-mim-miau?node-id=38-1465&p=f&viewport=237%2C232%2C0.03&t=S0EWqRjKEm3aYTPK-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=38%3A1465&show-proto-sidebar=1&page-id=1%3A4" target="_blank" rel="noopener" class="btn-modal-link">Ver proyecto en Figma →</a>
+      <div class="modal-qr-wrap">
+        <img src="QRMIM.png" alt="QR MIM Vecinos">
+        <span>Escanear</span>
+      </div>
+    </div>
+    <p class="modal-section-title">Proceso UX</p>
+    <div class="proceso-ux">
+      <div class="proceso-fase">
+        <span class="fase-num">01</span>
+        <h5>Contexto y comprensión</h5>
+        <p>Inmersión en el funcionamiento institucional del MIM. Revisión del programa Vecinos y sus canales actuales. Identificación del problema inicial.</p>
+        <div class="fase-tags"><span class="fase-tag">Stakeholders</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">02</span>
+        <h5>Análisis de servicio</h5>
+        <p>Detección de puntos de fricción en el flujo de inscripción. Identificación de información dispersa. Análisis del tono comunicacional y experiencia actual.</p>
+        <div class="fase-tags"><span class="fase-tag">Service blueprint</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">03</span>
+        <h5>Definición de Usuario</h5>
+        <p>Identificación de perfiles de vecinos. Consideración de distintos niveles de alfabetización digital. Priorización de experiencia móvil y lenguaje claro.</p>
+        <div class="fase-tags"><span class="fase-tag">Personas</span><span class="fase-tag">Mobile-first</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">04</span>
+        <h5>Arquitectura de Información</h5>
+        <p>Organización y jerarquización de contenidos. Simplificación de navegación. Definición de estructura digital.</p>
+        <div class="fase-tags"><span class="fase-tag">IA</span><span class="fase-tag">Sitemap</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">05</span>
+        <h5>Diseño de Flujos</h5>
+        <p>Construcción de flujos principales (registro, beneficios, inscripción). Reducción de pasos innecesarios. Clarificación de confirmaciones.</p>
+        <div class="fase-tags"><span class="fase-tag">User flows</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">06</span>
+        <h5>Prototipado</h5>
+        <p>Desarrollo de wireframes. Diseño de pantallas en Figma. Iteración conceptual junto al equipo institucional.</p>
+        <div class="fase-tags"><span class="fase-tag">Wireframes</span><span class="fase-tag">Figma</span></div>
+      </div>
+    </div>
+    <p class="modal-section-title">Actividades realizadas</p>
+    <ul class="modal-list">
+      <li>Research exploratorio y análisis del servicio existente</li>
+      <li>Definición de flujos principales de usuario</li>
+      <li>Diseño de experiencia centrada en el usuario</li>
+      <li>Prototipado en Figma</li>
+      <li>Colaboración con stakeholders institucionales</li>
+    </ul>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><strong>Rol</strong>UX/UI Designer</div>
+      <div class="modal-meta-item"><strong>Duración</strong>5 meses</div>
+      <div class="modal-meta-item"><strong>Tipo</strong>Práctica Profesional</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-biomateria" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('biomateria')">✕</button>
+    <div class="proyecto-tags" style="margin-bottom:16px">
+      <span class="tag">Front-end</span><span class="tag">IA</span><span class="tag">GUI Desktop</span>
+    </div>
+    <h3>BioMateria</h3>
+    <p class="modal-subtitle">Proyecto de Investigación · Factoría UDP</p>
+    <p class="modal-desc">GUI desktop para investigación aplicada de biomateriales con comunicación a modelo de IA en tiempo real mediante protocolo OSC.</p>
+    <p class="modal-section-title">Proceso UX</p>
+    <div class="proceso-ux">
+      <div class="proceso-fase">
+        <span class="fase-num">01</span>
+        <h5>Investigación</h5>
+        <p>Comprensión del contexto científico del proyecto. Estudio del protocolo OSC. Investigación sobre interfaces de software científico.</p>
+        <div class="fase-tags"><span class="fase-tag">Desk research</span><span class="fase-tag">OSC</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">02</span>
+        <h5>Definición de Requerimientos</h5>
+        <p>Identificación de variables a visualizar. Determinación de inputs necesarios para el modelo de IA. Definición de outputs y retroalimentación del sistema.</p>
+        <div class="fase-tags"><span class="fase-tag">I/O</span><span class="fase-tag">IA</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">03</span>
+        <h5>Diseño de Interfaz</h5>
+        <p>Arquitectura de la GUI desktop. Jerarquía visual enfocada en datos. Diseño modular de componentes. Priorización de claridad y control.</p>
+        <div class="fase-tags"><span class="fase-tag">GUI</span><span class="fase-tag">Data viz</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">04</span>
+        <h5>Desarrollo Front-End</h5>
+        <p>Construcción de interfaz en HTML. Estilización con CSS. Lógica interactiva con JavaScript. Implementación de comunicación vía protocolo OSC.</p>
+        <div class="fase-tags"><span class="fase-tag">HTML</span><span class="fase-tag">CSS</span><span class="fase-tag">JS</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">05</span>
+        <h5>Integración con IA</h5>
+        <p>Envío de parámetros desde la GUI al modelo. Recepción de respuestas del modelo. Visualización de resultados en tiempo real.</p>
+        <div class="fase-tags"><span class="fase-tag">Real-time</span><span class="fase-tag">OSC</span></div>
+      </div>
+    </div>
+    <p class="modal-section-title">Actividades realizadas</p>
+    <ul class="modal-list">
+      <li>Investigación técnica sobre biomateriales y sistemas interactivos</li>
+      <li>Análisis de requerimientos del modelo de IA</li>
+      <li>Diseño de arquitectura de información para GUI desktop</li>
+      <li>Desarrollo en HTML, CSS y JavaScript</li>
+      <li>Integración con IA mediante protocolo OSC</li>
+    </ul>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><strong>Rol</strong>UX/UI + Front-end</div>
+      <div class="modal-meta-item"><strong>Duración</strong>5 meses</div>
+      <div class="modal-meta-item"><strong>Tipo</strong>Investigación</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-pullman" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('pullman')">✕</button>
+    <div class="proyecto-tags" style="margin-bottom:16px">
+      <span class="tag">UX/UI</span><span class="tag">Mobile</span><span class="tag">E-commerce</span>
+    </div>
+    <h3>Pullman del Sur</h3>
+    <p class="modal-subtitle">Proyecto Académico · Universidad Diego Portales</p>
+    <p class="modal-desc">Rediseño de la experiencia de compra de pasajes con modo de compra rápida y asiento asignado automáticamente.</p>
+    <div class="modal-carousel" id="carousel-pullman">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="pullman1.png" alt="Pullman del Sur"></div>
+        <div class="carousel-slide"><img src="pullman2.png" alt="Pullman del Sur"></div>
+        <div class="carousel-slide"><img src="pullman3.png" alt="Pullman del Sur"></div>
+        <div class="carousel-slide"><img src="pullman4.png" alt="Pullman del Sur"></div>
+        <div class="carousel-slide"><img src="pullman5.png" alt="Pullman del Sur"></div>
+        <div class="carousel-slide"><img src="pullman6.png" alt="Pullman del Sur"></div>
+      </div>
+      <button class="carousel-btn carousel-prev" onclick="carouselMove('pullman',-1)">&#8249;</button>
+      <button class="carousel-btn carousel-next" onclick="carouselMove('pullman',1)">&#8250;</button>
+      <div class="carousel-dots" id="dots-pullman"></div>
+    </div>
+    <div class="modal-proyecto-link">
+      <a href="https://www.figma.com/proto/XjyvtL0dJfwFSYJg9jHqUp/20-sandoval-sofia-pullmanbus?node-id=239-2419&p=f&viewport=272%2C301%2C0.12&t=THJrEQQDeVRKeM1V-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=239%3A2474&page-id=239%3A1076" target="_blank" rel="noopener" class="btn-modal-link">Ver proyecto en Figma →</a>
+      <div class="modal-qr-wrap">
+        <img src="pullmandelsurQR.png" alt="QR Pullman del Sur">
+        <span>Escanear</span>
+      </div>
+    </div>
+    <p class="modal-section-title">Proceso UX</p>
+    <div class="proceso-ux">
+      <div class="proceso-fase">
+        <span class="fase-num">01</span>
+        <h5>Diagnóstico</h5>
+        <p>Análisis del estado actual: venta a través de sitio web con contacto y compra por WhatsApp. Identificación de fallas en el canal telefónico que generaban fricción.</p>
+        <div class="fase-tags"><span class="fase-tag">Análisis</span><span class="fase-tag">Competencia</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">02</span>
+        <h5>Empatizar</h5>
+        <p>Observación y escucha activa de usuarios. Identificación de necesidades, dolores y comportamientos de pasajeros frecuentes que viajan diariamente.</p>
+        <div class="fase-tags"><span class="fase-tag">Entrevistas</span><span class="fase-tag">Observación</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">03</span>
+        <h5>Investigación</h5>
+        <p>Ajuste del e-commerce web a formato app. Búsqueda de soluciones para facilitar y agilizar la compra desde dispositivos móviles.</p>
+        <div class="fase-tags"><span class="fase-tag">Mobile</span><span class="fase-tag">Benchmark</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">04</span>
+        <h5>Definir e Idear</h5>
+        <p>Análisis de insights para plantear el problema de diseño. Enfoque en mejorar la experiencia de compra rápida y directa desde una app, con asiento auto-asignado.</p>
+        <div class="fase-tags"><span class="fase-tag">Insights</span><span class="fase-tag">Compra rápida</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">05</span>
+        <h5>Prototipo + Testeo</h5>
+        <p>Diseño visual completo y funcional en Figma. Nuevas rondas de testeo y ajustes finales con usuarios reales.</p>
+        <div class="fase-tags"><span class="fase-tag">Figma</span><span class="fase-tag">Hi-fi</span><span class="fase-tag">Testing</span></div>
+      </div>
+    </div>
+    <p class="modal-section-title">Actividades realizadas</p>
+    <ul class="modal-list">
+      <li>Investigación de usuarios y análisis del proceso actual</li>
+      <li>Identificación de puntos de fricción</li>
+      <li>Testeo y optimización de flujos de navegación</li>
+      <li>Arquitectura de información mobile-first</li>
+      <li>Prototipado de alta fidelidad en Figma</li>
+    </ul>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><strong>Rol</strong>UX/UI Designer</div>
+      <div class="modal-meta-item"><strong>Duración</strong>5 meses</div>
+      <div class="modal-meta-item"><strong>Tipo</strong>Proyecto Académico</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-recioil" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('recioil')">✕</button>
+    <div class="proyecto-tags" style="margin-bottom:16px">
+      <span class="tag">UX/UI</span><span class="tag">Sustentabilidad</span>
+    </div>
+    <h3>ReciOil</h3>
+    <p class="modal-subtitle">Proyecto Académico · Diplomado en Gestión de la Innovación · UDP</p>
+    <p class="modal-desc">App que incentiva el reciclaje de aceite mediante recompensas (Giftcards, donaciones). Conecta con PyMEs que reutilizan el aceite como biodiesel.</p>
+    <div class="modal-carousel" id="carousel-recioil">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="recioil.png" alt="ReciOil"></div>
+        <div class="carousel-slide"><img src="recioli2.png" alt="ReciOil — cómo funciona"></div>
+      </div>
+      <button class="carousel-btn carousel-prev" onclick="carouselMove('recioil',-1)">&#8249;</button>
+      <button class="carousel-btn carousel-next" onclick="carouselMove('recioil',1)">&#8250;</button>
+      <div class="carousel-dots" id="dots-recioil"></div>
+    </div>
+    <div class="modal-proyecto-link">
+      <a href="https://www.figma.com/proto/OKb3j5S8OpdecUhv11haU2/APP-recioil?node-id=62-175&p=f&viewport=355%2C421%2C0.15&t=2KObCgfqaxJzvh7j-1&scaling=min-zoom&content-scaling=fixed&page-id=62%3A154" target="_blank" rel="noopener" class="btn-modal-link">Ver proyecto en Figma →</a>
+      <div class="modal-qr-wrap">
+        <img src="recioliQR.png" alt="QR ReciOil">
+        <span>Escanear</span>
+      </div>
+    </div>
+    <p class="modal-section-title">Proceso UX</p>
+    <div class="proceso-ux">
+      <div class="proceso-fase">
+        <span class="fase-num">01</span>
+        <h5>Investigación</h5>
+        <p>Investigación de usuarios y proceso actual de reciclaje. Análisis del impacto del aceite usado en océanos y oportunidad de reutilización como biodiésel.</p>
+        <div class="fase-tags"><span class="fase-tag">Sustentabilidad</span><span class="fase-tag">Research</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">02</span>
+        <h5>Empatizar</h5>
+        <p>Identificación de puntos de fricción en plataformas existentes y barreras que impedían que los usuarios reciclaran aceite en casa.</p>
+        <div class="fase-tags"><span class="fase-tag">Pain points</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">03</span>
+        <h5>Definir</h5>
+        <p>Arquitectura de información mobile-first. Definición del sistema de recompensas (Giftcards, donaciones) y conexión con PyMEs recicladoras.</p>
+        <div class="fase-tags"><span class="fase-tag">Mobile-first</span><span class="fase-tag">Sistema</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">04</span>
+        <h5>Prototipar</h5>
+        <p>Prototipado de frames en Figma con foco en solicitud rápida de rescate, canje de litros y validación. Identidad visual digital de la marca.</p>
+        <div class="fase-tags"><span class="fase-tag">Figma</span><span class="fase-tag">Branding</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">05</span>
+        <h5>Testear</h5>
+        <p>Testeo y optimización de flujos de navegación. Ajuste de la experiencia centrada en una solicitud rápida y clara.</p>
+        <div class="fase-tags"><span class="fase-tag">Usability</span></div>
+      </div>
+    </div>
+    <p class="modal-section-title">Actividades realizadas</p>
+    <ul class="modal-list">
+      <li>Investigación de usuarios y proceso de reciclaje</li>
+      <li>Identificación de puntos de fricción</li>
+      <li>Arquitectura de información mobile-first</li>
+      <li>Prototipado en Figma</li>
+      <li>Identidad visual digital</li>
+    </ul>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><strong>Rol</strong>UX/UI Designer</div>
+      <div class="modal-meta-item"><strong>Duración</strong>3 meses</div>
+      <div class="modal-meta-item"><strong>Tipo</strong>Proyecto Académico</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-lamp" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('lamp')">✕</button>
+    <div class="proyecto-tags" style="margin-bottom:16px">
+      <span class="tag">Diseño Industrial</span><span class="tag">Arduino</span>
+    </div>
+    <h3>Eternal Lamp</h3>
+    <p class="modal-subtitle">Proyecto Académico · Universidad Diego Portales</p>
+    <p class="modal-desc">Lámpara de arte en mimbre y madera. Al detectar presencia activa luz y reproduce audios aleatorios de 15–30 segundos de seres queridos.</p>
+    <div class="modal-carousel" id="carousel-lamp">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="eternal lamp.png" alt="Eternal Lamp"></div>
+        <div class="carousel-slide"><img src="eternalamp1.png" alt="Eternal Lamp"></div>
+        <div class="carousel-slide"><img src="eternalamp2.png" alt="Eternal Lamp"></div>
+        <div class="carousel-slide"><img src="eternalamp3.png" alt="Eternal Lamp"></div>
+        <div class="carousel-slide"><img src="eternalamp4.png" alt="Eternal Lamp"></div>
+      </div>
+      <button class="carousel-btn carousel-prev" onclick="carouselMove('lamp',-1)">&#8249;</button>
+      <button class="carousel-btn carousel-next" onclick="carouselMove('lamp',1)">&#8250;</button>
+      <div class="carousel-dots" id="dots-lamp"></div>
+    </div>
+    <p class="modal-section-title">Proceso UX</p>
+    <div class="proceso-ux">
+      <div class="proceso-fase">
+        <span class="fase-num">01</span>
+        <h5>Investigación</h5>
+        <p>Investigación sobre necesidades de compañía y bienestar en personas que viven solas. Análisis de objetos cotidianos que fomentan la contemplación en el hogar.</p>
+        <div class="fase-tags"><span class="fase-tag">Bienestar</span><span class="fase-tag">Research</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">02</span>
+        <h5>Conceptualizar</h5>
+        <p>Definición de una lámpara interactiva como objeto de contemplación y compañía. Interacción mediante activación al sentarse: luz + audio aleatorio.</p>
+        <div class="fase-tags"><span class="fase-tag">Concepto</span><span class="fase-tag">Sensorial</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">03</span>
+        <h5>Materialidad</h5>
+        <p>Selección de mimbre para la pantalla y madera para la base, buscando una percepción cálida y cercana coherente con el sentido emocional del objeto.</p>
+        <div class="fase-tags"><span class="fase-tag">Mimbre</span><span class="fase-tag">Madera</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">04</span>
+        <h5>Programación</h5>
+        <p>Integración de Arduino con sensor de presencia y relé de luz. Programación de reproducción aleatoria de audios de seres queridos de 15–30 segundos.</p>
+        <div class="fase-tags"><span class="fase-tag">Arduino</span><span class="fase-tag">Sensor</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">05</span>
+        <h5>Prototipar</h5>
+        <p>Construcción del prototipo funcional en mimbre y madera, integrando el sistema electrónico dentro de la pantalla.</p>
+        <div class="fase-tags"><span class="fase-tag">Fabricación</span></div>
+      </div>
+      <div class="proceso-fase">
+        <span class="fase-num">06</span>
+        <h5>Testear</h5>
+        <p>Testeo de interacción usuario–objeto. Ajustes en activación, volumen y respuesta lumínica para evaluar la experiencia sensorial.</p>
+        <div class="fase-tags"><span class="fase-tag">Iteración</span></div>
+      </div>
+    </div>
+    <p class="modal-section-title">Actividades realizadas</p>
+    <ul class="modal-list">
+      <li>Investigación sobre necesidades de compañía y bienestar</li>
+      <li>Conceptualización de objeto interactivo</li>
+      <li>Selección de materiales (mimbre y madera)</li>
+      <li>Integración de sistema electrónico con Arduino</li>
+      <li>Programación de lógica de activación y audios aleatorios</li>
+      <li>Construcción y testeo de prototipo funcional</li>
+    </ul>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><strong>Rol</strong>Diseñadora Industrial</div>
+      <div class="modal-meta-item"><strong>Duración</strong>4 meses</div>
+      <div class="modal-meta-item"><strong>Tipo</strong>Proyecto Académico</div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE MÍ -->
+<section id="sobre">
+  <div>
+    <div class="section-label">Trayectoria</div>
+    <h2>Educación &<br><em>Experiencia</em></h2>
+    <div class="sobre-timeline">
+      <div class="timeline-item fade-up">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-content">
+          <h4>Diseñadora UX</h4>
+          <p>Realización de landing pages — Consultora digital Kings</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-content">
+          <h4>Ayudante de Cátedra</h4>
+          <p>Asignatura Cuerpo, Movimiento y Código — Universidad Diego Portales.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-content">
+          <h4>Práctica Profesional — MIM</h4>
+          <p>Fundación Nuevos Tiempos · Centro Interactivo de los Conocimientos.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+          <h4>Google UX — Coursera</h4>
+          <p>Certificación UX UI. Minor en Gestión de la Innovación, Universidad Diego Portales.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+          <h4>Gestión de la Innovación — Universidad Diego Portales</h4>
+          <p>Minor en Gestión de la Innovación, UDP.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+          <h4>Investigadora — UDP</h4>
+          <p>Proyectos financiados por Factoría UDP: template de portafolio y software de biomateriales con IA.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-up">
+        <div class="timeline-year">2021–25</div>
+        <div class="timeline-content">
+          <h4>Diseño Industrial — UDP</h4>
+          <p>Titulada con distinción máxima. Top 10% de la generación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sobre-right fade-up">
+    <img src="perfil.jpeg" alt="Sofía Sandoval" class="sobre-perfil">
+    <div class="section-label">Sobre mí</div>
+    <p class="sobre-bio">
+      Soy <strong>diseñadora industrial especializada en UX</strong> con más de dos años de experiencia en el desarrollo de apps y web. Me titulé con distinción máxima en UDP.
+    </p>
+    <p class="sobre-bio">
+      He trabajado en proyectos diversos como apps de duelo, software con IA, plataformas comunitarias y objetos interactivos con Arduino.
+    </p>
+    <div class="section-label" style="margin-top:36px">Herramientas</div>
+    <div class="habilidades-grid">
+      <span class="habilidad">Figma</span>
+      <span class="habilidad">Adobe Illustrator</span>
+      <span class="habilidad">Miro</span>
+      <span class="habilidad">GitHub</span>
+      <span class="habilidad">HTML · CSS · JS</span>
+      <span class="habilidad">VS Code</span>
+      <span class="habilidad">Arduino</span>
+      <span class="habilidad">Investigación UX</span>
+      <span class="habilidad">Claude Code</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-label">Contacto</div>
+  <h2>¿<em>Colaboramos</em>?</h2>
+  <p class="section-intro">Estoy disponible para proyectos freelance, colaboraciones y oportunidades de trabajo.</p>
+  <a href="CV-Sandoval-Sofia.pdf" download class="btn-cv">Descargar CV →</a>
+  <div class="contacto-grid">
+    <div class="contacto-links">
+      <a href="mailto:ssofia.sandoval.labbe@gmail.com" class="contacto-link">
+        <div class="contacto-link-icon">✉️</div>
+        <div>ssofia.sandoval.labbe@gmail.com<span>Correo</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/ssofia/" target="_blank" class="contacto-link">
+        <div class="contacto-link-icon" style="font-weight:700;font-size:13px;">in</div>
+        <div>LinkedIn<span>Ver perfil</span></div>
+      </a>
+      <a href="https://github.com/ssofiasandoval" target="_blank" class="contacto-link">
+        <div class="contacto-link-icon" style="font-family:monospace;font-size:13px;">gh</div>
+        <div>GitHub<span>Ver repositorios</span></div>
+      </a>
+      <a href="https://www.behance.net/sofaasandova1" target="_blank" class="contacto-link">
+        <div class="contacto-link-icon" style="font-weight:700;font-size:12px;">Bē</div>
+        <div>Behance<span>Ver perfil</span></div>
+      </a>
+      <a href="https://www.instagram.com/ssofia.sandoval/" target="_blank" class="contacto-link">
+        <div class="contacto-link-icon">📷</div>
+        <div>Instagram<span>Ver perfil</span></div>
+      </a>
+    </div>
+    <div class="contacto-form">
+      <div class="form-group">
+        <label>NOMBRE</label>
+        <input type="text" placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <label>CORREO</label>
+        <input type="email" placeholder="tu@correo.com">
+      </div>
+      <div class="form-group">
+        <label>MENSAJE</label>
+        <textarea placeholder="Cuéntame sobre tu proyecto..."></textarea>
+      </div>
+      <button class="btn-send" onclick="enviarMensaje()">Enviar mensaje →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo-white.png" alt="Sofía Sandoval">
+  </div>
+  <div class="footer-copy">© 2025 Sofía Sandoval Labbé</div>
+  <div class="footer-copy" style="font-size:12px; opacity:0.5; margin-top:6px;">Diseñado y desarrollado por Sofía Sandoval</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
